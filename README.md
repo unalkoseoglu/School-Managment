@@ -1,4 +1,4 @@
-# ogr_bil_sistemi
+# School Managment
 
 A new Flutter project.
 
