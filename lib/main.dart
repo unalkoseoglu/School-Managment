@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Bilgi Sistemi',
+      title: 'School Managment',
       home: LoginView(),
     );
   }

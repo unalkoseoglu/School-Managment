@@ -21,6 +21,9 @@ class _LoginViewState extends State<LoginView> {
   final String login = 'Giriş Yap';
   final String hintText2 = 'Şifre';
   final String hintText3 = 'Kullanıcı Adı';
+  final String okay = 'Tamam';
+  final String error = 'Hatalı Giriş';
+  final String errorDialog = 'Lütfen kullanıcızı adınızı ve şifreyi giriniz.';
   final userController = TextEditingController();
   final pswController = TextEditingController();
   late final LoginViewModel _loginViewModel;
@@ -72,17 +75,17 @@ class _LoginViewState extends State<LoginView> {
                           ? context.navigateToPage(HomeView())
                           : showDialog(
                               context: context,
-                              builder: (context) => AlertDialog(
-                                    title: const Text('Hatalı Giriş'),
-                                    content: const Text(
-                                        'Lütfen ukullanıcızı adınızı ve şifreyi giriniz.'),
-                                    actions: <Widget>[
-                                      TextButton(
-                                          onPressed: () =>
-                                              Navigator.pop(context),
-                                          child: const Text('Tamam'))
-                                    ],
-                                  ));
+                              builder: (context) {
+                                return AlertDialog(
+                                  title: Text(error),
+                                  content: Text(errorDialog),
+                                  actions: <Widget>[
+                                    TextButton(
+                                        onPressed: () => Navigator.pop(context),
+                                        child: Text(okay))
+                                  ],
+                                );
+                              });
                     },
                   )
                 ],
